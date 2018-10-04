@@ -1,19 +1,22 @@
 package selenium_test;
 
 import java.io.File;
-import java.io.FileInputStream;
+//import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
+//import org.apache.poi.xssf.usermodel.XSSFCell;
+//import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class WriteExcels {
+	public static Logger log = Logger.getLogger(WriteExcels.class);
 	public static void main (String []args) throws IOException{
 		
    XSSFWorkbook workbook = new XSSFWorkbook();
@@ -29,6 +32,10 @@ public class WriteExcels {
    workbook.write(file);
    file.close();
    System.out.println("Saved....!!");
+   DOMConfigurator.configure("log4j.xml");
+   log.debug("This is debug");
+   log.info("This is just an info");
+   log.error("Errors found");
 	}
 }
   

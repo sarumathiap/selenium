@@ -1,0 +1,3 @@
+2018-10-04 17:44:34 DEBUG WriteExcels:36 - This is debug
+2018-10-04 17:44:34 INFO  WriteExcels:37 - This is just an info
+2018-10-04 17:44:34 ERROR WriteExcels:38 - Errors found
