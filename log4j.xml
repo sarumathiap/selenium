@@ -20,11 +20,33 @@
 			value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
 	    </layout>
 	</appender>
+	 <appender name="HtmlAppender" class="org.apache.log4j.DailyRollingFileAppender">
+  <param name="my_file_appender" value="/home/sarumathi/eclipse-workspace/selenium/log.html"/>
+<layout class="org.apache.log4j.HTMLLayout"/>
 
+ </appender>
+<appender name="AdministratorEmail" class="SecureSMTPappender">
+  <param name="BufferSize" value="512" />
+  <param name="SMTPHost" value="smtp.gmail.com" />
+    <param name="SMTPUsername" value="markuci123@gmail.com" />
+        <param name="SMTPPassword" value="12345" />
+  <param name="From" value="markuci123@gmail.com" />
+  <param name="To" value="markuci@gmail.com" />
+  <param name="Subject" value="SomeApplication on SomeServer12" />
+  <layout class="org.apache.log4j.PatternLayout">
+    <param name="ConversionPattern"
+      value="[%d{ISO8601}]%n%n%-5p%n%n%c%n%n%m%n%n" />
+  </layout>
+  <filter class="org.apache.log4j.varia.LevelRangeFilter">
+    <param name="LevelMin" value="error" />
+    <param name="LevelMax" value="fatal" />
+  </filter>
+</appender>
 	<root>
-		<level value="DEBUG" />
+	
 		<appender-ref ref="console" />
 		<appender-ref ref="file" />
+		<appender-ref ref="HtmlAppender" />
 	</root>
 
 </log4j:configuration>

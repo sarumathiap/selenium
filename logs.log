@@ -1,3 +1,9 @@
-2018-10-04 17:45:07 DEBUG WriteExcels:36 - This is debug
-2018-10-04 17:45:07 INFO  WriteExcels:37 - This is just an info
-2018-10-04 17:45:07 ERROR WriteExcels:38 - Errors found
+2018-10-05 15:32:15 ERROR ReadExcels:64 - message
+java.io.FileNotFoundException: /home/sarumathi/test12.xlsx (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at selenium_test.ReadExcels.main(ReadExcels.java:29)
+2018-10-05 15:32:15 DEBUG ReadExcels:65 - this is debug
+2018-10-05 15:32:15 INFO  ReadExcels:66 - this is info
+2018-10-05 15:32:15 FATAL ReadExcels:67 - this is fatal

@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 
 import java.io.IOException;
 
-import org.apache.log4j.Logger;
+
 import org.apache.log4j.xml.DOMConfigurator;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -16,7 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class WriteExcels {
-	public static Logger log = Logger.getLogger(WriteExcels.class);
+
 	public static void main (String []args) throws IOException{
 		
    XSSFWorkbook workbook = new XSSFWorkbook();
@@ -28,14 +28,16 @@ public class WriteExcels {
 		   cell.setCellValue((int) (Math.random()*100));
 	   }
    }
-   FileOutputStream file = new FileOutputStream(new File("/home/sarumathi/test.xlsx"));
-   workbook.write(file);
-   file.close();
+   try {
+	FileOutputStream file = new FileOutputStream(new File("/home/sarumathi/test11.xlsx"));
+	   workbook.write(file);
+	   file.close();
+} catch (Exception e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
    System.out.println("Saved....!!");
-   DOMConfigurator.configure("log4j.xml");
-   log.debug("This is debug");
-   log.info("This is just an info");
-   log.error("Errors found");
+
 	}
 }
   
