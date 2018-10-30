@@ -33,11 +33,11 @@ public class WebTables {
 			  List<WebElement> rows1 = tbody.findElements(By.tagName("tr"));
 			 
 			  for (int rnum=0;rnum<rows1.size();rnum++) {
-				  List<WebElement> data = rows1.get(rnum).findElements(By.tagName("td"));
-			
-			  for(int datasize=0;datasize<data.size();datasize++) {
+				  List<WebElement> cols1 = rows1.get(rnum).findElements(By.tagName("td"));
+	
+			  for(int datasize=0;datasize<cols1.size();datasize++) {
 				 // List<WebElement> column = cols.get(rnum).findElements(By.tagName("td"));
-				  System.out.println(data.get(datasize).getText()); 
+				  System.out.println(cols1.get(datasize).getText()); 
 				  
 			  }
 		  }
