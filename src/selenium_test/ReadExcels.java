@@ -26,11 +26,12 @@ public static void main(String []args) throws InvalidFormatException,EncryptedDo
   Logger log = Logger.getLogger(ReadExcels.class);
 	try {
 
-	FileInputStream file = new FileInputStream(new File("/home/sarumathi/test12.xlsx"));
+	FileInputStream file = new FileInputStream(new File("/home/sarumathi/test11.xlsx"));
 	Workbook workbook = WorkbookFactory.create(file);
-	 Sheet sheet0= workbook.getSheetAt(0);
+	Sheet sheet0= workbook.getSheetAt(0);
 		//Sheet sheet = workbook.getSheetAt(0);
-
+    Row row=sheet0.getRow(0);
+  
 	Iterator<Row> row1 = sheet0.iterator();
 	while(row1.hasNext()) {
 		Row ro=row1.next();
